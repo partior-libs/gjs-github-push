@@ -44,7 +44,7 @@ const main = async () => {
     const repository = trim(process.env.INPUT_REPOSITORY || process.env.GITHUB_REPOSITORY);
     if (!branch) {
         const headers = {
-            'User-Agent': 'github.com/ad-m/github-push-action'
+            'User-Agent': 'github.com/partior-libs/gjs-github-push'
         };
         if (process.env.INPUT_GITHUB_TOKEN) headers.Authorization = `token ${process.env.INPUT_GITHUB_TOKEN}`;
         const body = JSON.parse(await get(`https://api.github.com/repos/${repository}`, { headers }))
